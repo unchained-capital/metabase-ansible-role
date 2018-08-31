@@ -1,0 +1,18 @@
+---
+
+- name: Configuring metabase web group (without explicit ID)
+  when: "{{ metabase_group_id is not defined }}"
+  group: name={{ metabase_group }}
+
+- name: Configuring metabase web group (with explicit ID)
+  when: "{{ metabase_group_id is defined }}"
+  group: name={{ metabase_group }} gid={{ metabase_group_id }}
+  
+- name: Configuring metabase web user (without explicit ID)
+  when: "{{ metabase_user_id is not defined }}"
+  user: name={{ metabase_user }} group={{ metabase_group }} home={{ metabase_pid_dir }} createhome=no
+
+- name: Configuring metabase web user (with explicit ID)
+  when: "{{ metabase_user_id is defined }}"
+  user: name={{ metabase_user }} group={{ metabase_group }} home={{ metabase_pid_dir }} createhome=no uid={{ metabase_user_id }}
+

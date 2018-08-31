@@ -1,0 +1,6 @@
+---
+
+- name: Ensure configuration script is correct
+  template: src="templates/config.sh.j2" dest="{{ metabase_conf_dir }}/config.sh" owner=root group="{{ metabase_group }}" mode=0640
+  notify:
+    - restart metabase

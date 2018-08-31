@@ -1,0 +1,29 @@
+---
+
+metabase_group_id: ~
+metabase_user_id:  ~
+metabase_group:    www-data
+metabase_user:     www-data
+
+metabase_version:     "0.30.1"  # most recent as of 2018-08-30
+metabase_release_url: "http://downloads.metabase.com/v{{ metabase_version }}/metabase.jar"
+
+metabase_root_dir: /srv/metabase
+metabase_log_dir:  /var/log/metabase
+metabase_conf_dir: /etc/metabase
+metabase_pid_dir:  /srv
+
+metabase_interface: "0.0.0.0"
+metabase_port:      3000
+
+metabase_db_name: metabase
+metabase_db_type: postgres
+metabase_db_host: localhost
+metabase_db_port: 5432
+metabase_db_user: metabase
+metabase_db_pass: ~
+  
+metabase_state:   running
+metabase_enabled: yes
+
+metabase_encryption_key: ~

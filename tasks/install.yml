@@ -1,0 +1,16 @@
+---
+
+- include: user_and_group.yml
+
+- name: Ensure root directory exists
+  file: path="{{ metabase_root_dir }}" state=directory owner=root group=root mode=0755
+
+- name: Ensure log directory exists
+  file: path="{{ metabase_log_dir }}" state=directory owner="{{ metabase_user }}" group="{{ metabase_group }}" mode=0755
+
+- name: Ensure config directory exists
+  file: path="{{ metabase_conf_dir }}" state=directory owner=root group=root mode=0755
+
+- name: Ensure Metabase jar is downloaded
+  get_url: url="{{ metabase_release_url }}" dest="{{ metabase_root_dir }}/metabase.jar" owner=root group=root mode=0644
+  

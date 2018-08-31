@@ -1,0 +1,5 @@
+---
+
+- name: restart metabase
+  service: name=metabase state=restarted
+  when: "{{ metabase_enabled }}" 

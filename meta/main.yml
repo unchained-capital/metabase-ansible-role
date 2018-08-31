@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  author: "Dhruv Bansal"
+  company: Unchained Capital
+  license: MIT
+  min_ansible_version: 2.2
+  platforms:
+   - name: Ubuntu
+     versions:
+      - trusty
+  galaxy_tags:
+   - analytics
+   - data_science
+   - webapps
+dependencies: []
