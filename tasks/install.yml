@@ -13,4 +13,5 @@
 
 - name: Ensure Metabase jar is downloaded
   get_url: url="{{ metabase_release_url }}" dest="{{ metabase_root_dir }}/metabase.jar" owner=root group=root mode=0644
-  
+  notify:
+    - restart metabase
